@@ -6,12 +6,10 @@ import axios from "axios";
 export async function getMovieDetails(id: string, section: string) {
   // Simulate API call
  const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
-  const options = {
-    method: "GET",
+   const options = {
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2OWI3YWU0NjEwYmExZDI4MTNhMjI4YmY3NTBiNjgxMCIsIm5iZiI6MTc0NDkyODgzMS4wNDMsInN1YiI6IjY4MDE4MDNmOTFkM2Y2NWM1ZmFjZWRmOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Sotzj7WMue8zYNczk8sZ6AN7k_WWBKQ8W0aeGh6sZ7E",
+      Authorization: `Bearer ${process.env.TMDB_BEARER_TOKEN}`,
     },
   };
 
